@@ -67,14 +67,9 @@
             scrollbar-width: none;
         }
 
-        /* 简单的连接线样式 */
-        .connector-line {
-            height: 64px;
-            width: 1px;
-            background: linear-gradient(to bottom, #D1D5DB, #BCCCDC);
-            border-left: 1px dashed #BCCCDC;
-            margin: 4px auto;
-            position: relative;
+        /* 序号徽章样式 */
+        .step-badge {
+            @apply absolute -top-4 -left-4 w-10 h-10 bg-[#2F3E35] text-[#FAF9F6] rounded-full flex items-center justify-center font-serif font-bold text-lg shadow-lg border-4 border-[#FAF9F6] z-20;
         }
     </style>
 </head>
@@ -107,7 +102,7 @@
                 <div class="w-px h-3 bg-brand-sage opacity-50"></div>
                 <a href="#" class="flex items-center gap-1.5 hover:text-white transition-colors opacity-90 hover:opacity-100">
                     <i data-lucide="globe" class="w-3 h-3 text-brand-sage"></i>
-                    <span class="font-serif italic tracking-wider">EN</span>
+                    <span class="font-serif italic tracking-wider">CH</span>
                 </a>
             </div>
         </div>
@@ -180,7 +175,7 @@
                     <img src="https://pic1.imgdb.cn/item/695a90d601fc8328da17270d.png" alt="Consultation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.95]">
                     <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/50 shadow-sm flex items-center gap-2">
                         <i data-lucide="armchair" class="w-4 h-4 text-brand-gold"></i>
-          
+           
                     </div>
                 </div>
 
@@ -197,71 +192,75 @@
 
     <!-- 流程全景图 -->
     <section class="w-full max-w-6xl px-6 mb-32 relative z-10 opacity-0 animate-fade-up" style="animation-delay: 0.3s;">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-dark mb-2">服务全流程概览</h2>
-            <p class="text-[#6B7C75] text-sm font-light tracking-[0.1em] uppercase opacity-70">Service Roadmap</p>
-        </div>
-
-        <!-- 水平步骤条 (Desktop) -->
-        <div class="hidden md:flex justify-between items-start relative px-10 py-8">
-            <!-- 连接线 -->
-            <div class="absolute top-[69px] left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-brand-sage/30 to-transparent z-0"></div>
-
-            <!-- Steps Generator using HTML -->
-            <div class="flex flex-col items-center relative group z-10 w-28">
-                <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4">01</span>
-                <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10">
-                    <i data-lucide="clipboard-check" class="w-6 h-6"></i>
-                </div>
-                <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center">接案初筛</span>
-            </div>
-
-            <div class="flex flex-col items-center relative group z-10 w-28">
-                <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4">02</span>
-                <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10">
-                    <i data-lucide="brain" class="w-6 h-6"></i>
-                </div>
-                <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center">全息评估</span>
-            </div>
-
-            <div class="flex flex-col items-center relative group z-10 w-28">
-                <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4">03</span>
-                <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10">
-                    <i data-lucide="message-circle-heart" class="w-6 h-6"></i>
-                </div>
-                <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center">深度面谈</span>
-            </div>
-
-            <div class="flex flex-col items-center relative group z-10 w-28">
-                <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4">04</span>
-                <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10">
-                    <i data-lucide="file-key" class="w-6 h-6"></i>
-                </div>
-                <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center">私密建档</span>
-            </div>
-
-            <div class="flex flex-col items-center relative group z-10 w-28">
-                <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4">05</span>
-                <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10">
-                    <i data-lucide="users" class="w-6 h-6"></i>
-                </div>
-                <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center">专家会诊</span>
-            </div>
-
-            <div class="flex flex-col items-center relative group z-10 w-28">
-                <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4">06</span>
-                <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10">
-                    <i data-lucide="sparkles" class="w-6 h-6"></i>
-                </div>
-                <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center">定制服务</span>
-            </div>
+        <!-- 新增：背景卡片包裹层 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-[#E8E6E1] shadow-sm">
             
-            <div class="flex flex-col items-center relative group z-10 w-28">
-                <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4">07</span>
-                <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10">
-                    <i data-lucide="activity" class="w-6 h-6"></i>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-dark mb-2">服务全流程概览</h2>
+                <p class="text-[#6B7C75] text-sm font-light tracking-[0.1em] uppercase opacity-70">Service Roadmap</p>
+            </div>
+
+            <!-- 水平步骤条 (Desktop) -->
+            <div class="hidden md:flex justify-between items-start relative px-4">
+                <!-- 连接线 -->
+                <div class="absolute top-[69px] left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-brand-sage/30 to-transparent z-0"></div>
+
+                <!-- Steps Generator using HTML -->
+                <div class="flex flex-col items-center relative group z-10 w-28">
+                    <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4 transition-colors group-hover:text-brand-sage/20">01</span>
+                    <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10 hover:border-brand-sage/30 hover:shadow-lg">
+                        <i data-lucide="clipboard-check" class="w-6 h-6"></i>
+                    </div>
+                    <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center group-hover:text-brand-main transition-colors">接案初筛</span>
                 </div>
-                <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center">成效评估</span>
+
+                <div class="flex flex-col items-center relative group z-10 w-28">
+                    <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4 transition-colors group-hover:text-brand-sage/20">02</span>
+                    <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10 hover:border-brand-sage/30 hover:shadow-lg">
+                        <i data-lucide="brain" class="w-6 h-6"></i>
+                    </div>
+                    <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center group-hover:text-brand-main transition-colors">全息评估</span>
+                </div>
+
+                <div class="flex flex-col items-center relative group z-10 w-28">
+                    <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4 transition-colors group-hover:text-brand-sage/20">03</span>
+                    <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10 hover:border-brand-sage/30 hover:shadow-lg">
+                        <i data-lucide="message-circle-heart" class="w-6 h-6"></i>
+                    </div>
+                    <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center group-hover:text-brand-main transition-colors">深度面谈</span>
+                </div>
+
+                <div class="flex flex-col items-center relative group z-10 w-28">
+                    <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4 transition-colors group-hover:text-brand-sage/20">04</span>
+                    <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10 hover:border-brand-sage/30 hover:shadow-lg">
+                        <i data-lucide="file-key" class="w-6 h-6"></i>
+                    </div>
+                    <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center group-hover:text-brand-main transition-colors">私密建档</span>
+                </div>
+
+                <div class="flex flex-col items-center relative group z-10 w-28">
+                    <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4 transition-colors group-hover:text-brand-sage/20">05</span>
+                    <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10 hover:border-brand-sage/30 hover:shadow-lg">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center group-hover:text-brand-main transition-colors">专家会诊</span>
+                </div>
+
+                <div class="flex flex-col items-center relative group z-10 w-28">
+                    <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4 transition-colors group-hover:text-brand-sage/20">06</span>
+                    <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10 hover:border-brand-sage/30 hover:shadow-lg">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center group-hover:text-brand-main transition-colors">定制服务</span>
+                </div>
+                
+                <div class="flex flex-col items-center relative group z-10 w-28">
+                    <span class="text-3xl font-serif font-bold text-[#E8E6E1] mb-2 -mt-4 transition-colors group-hover:text-brand-sage/20">07</span>
+                    <div class="w-16 h-16 rounded-full bg-white border border-[#F3F4F6] shadow-md flex items-center justify-center text-brand-sage hover:scale-110 transition-transform cursor-default relative z-10 hover:border-brand-sage/30 hover:shadow-lg">
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    </div>
+                    <span class="mt-4 text-xs font-bold text-[#6B7C75] uppercase text-center group-hover:text-brand-main transition-colors">成效评估</span>
+                </div>
             </div>
         </div>
     </section>
@@ -271,6 +270,10 @@
 
         <!-- Card 1: 接案 -->
         <div class="relative w-full max-w-3xl bg-white p-8 md:p-10 rounded-[2.5rem] border border-[#E8E6E1] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 group">
+            
+            <!-- 序号 01 -->
+            <div class="absolute -top-4 -left-4 w-10 h-10 bg-[#2F3E35] text-[#FAF9F6] rounded-full flex items-center justify-center font-serif font-bold text-lg shadow-lg border-4 border-[#FAF9F6] z-20">01</div>
+            
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="shrink-0 w-16 h-16 rounded-2xl bg-brand-sage flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform ring-4 ring-white text-white">
                     <i data-lucide="clipboard-check" class="w-6 h-6"></i>
@@ -298,11 +301,18 @@
             </div>
         </div>
 
-        <!-- 连接器 -->
-        <div class="connector-line"></div>
+        <!-- 箭头连接器 -->
+        <div class="flex flex-col items-center justify-center h-16 text-[#BCCCDC]">
+            <div class="w-px h-full bg-[#BCCCDC] border-l border-dashed border-[#BCCCDC]"></div>
+            <i data-lucide="chevron-down" class="w-5 h-5 -mt-2 bg-[#FAF9F6] text-[#9CA3AF]"></i>
+        </div>
 
         <!-- Card 2: 评估 -->
         <div class="relative w-full max-w-3xl bg-white p-8 md:p-10 rounded-[2.5rem] border border-[#E8E6E1] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 group">
+            
+            <!-- 序号 02 -->
+            <div class="absolute -top-4 -left-4 w-10 h-10 bg-[#2F3E35] text-[#FAF9F6] rounded-full flex items-center justify-center font-serif font-bold text-lg shadow-lg border-4 border-[#FAF9F6] z-20">02</div>
+
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="shrink-0 w-16 h-16 rounded-2xl bg-[#6B9AC4] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform ring-4 ring-white text-white">
                     <i data-lucide="brain" class="w-6 h-6"></i>
@@ -324,10 +334,18 @@
             </div>
         </div>
 
-        <div class="connector-line"></div>
+        <!-- 箭头连接器 -->
+        <div class="flex flex-col items-center justify-center h-16 text-[#BCCCDC]">
+            <div class="w-px h-full bg-[#BCCCDC] border-l border-dashed border-[#BCCCDC]"></div>
+            <i data-lucide="chevron-down" class="w-5 h-5 -mt-2 bg-[#FAF9F6] text-[#9CA3AF]"></i>
+        </div>
 
         <!-- Card 3: 面谈 -->
         <div class="relative w-full max-w-3xl bg-white p-8 md:p-10 rounded-[2.5rem] border border-[#E8E6E1] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 group">
+            
+            <!-- 序号 03 -->
+            <div class="absolute -top-4 -left-4 w-10 h-10 bg-[#2F3E35] text-[#FAF9F6] rounded-full flex items-center justify-center font-serif font-bold text-lg shadow-lg border-4 border-[#FAF9F6] z-20">03</div>
+
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="shrink-0 w-16 h-16 rounded-2xl bg-brand-gold flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform ring-4 ring-white text-white">
                     <i data-lucide="message-circle-heart" class="w-6 h-6"></i>
@@ -349,10 +367,18 @@
             </div>
         </div>
 
-        <div class="connector-line"></div>
+        <!-- 箭头连接器 -->
+        <div class="flex flex-col items-center justify-center h-16 text-[#BCCCDC]">
+            <div class="w-px h-full bg-[#BCCCDC] border-l border-dashed border-[#BCCCDC]"></div>
+            <i data-lucide="chevron-down" class="w-5 h-5 -mt-2 bg-[#FAF9F6] text-[#9CA3AF]"></i>
+        </div>
 
-        <!-- 定制方案 -->
+        <!-- Card 4: 定制方案 -->
         <div class="relative w-full max-w-3xl bg-white p-8 md:p-10 rounded-[2.5rem] border border-[#E8E6E1] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 group">
+            
+            <!-- 序号 04 -->
+            <div class="absolute -top-4 -left-4 w-10 h-10 bg-[#2F3E35] text-[#FAF9F6] rounded-full flex items-center justify-center font-serif font-bold text-lg shadow-lg border-4 border-[#FAF9F6] z-20">04</div>
+
             <div class="absolute top-0 left-10 w-20 h-1.5 bg-brand-sage rounded-b-xl opacity-80"></div>
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="shrink-0 w-16 h-16 rounded-2xl bg-brand-sage flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform ring-4 ring-white text-white">
@@ -360,7 +386,7 @@
                 </div>
                 <div class="flex-1">
                     <div class="flex flex-col md:flex-row md:items-end gap-3 mb-4">
-                        <h3 class="text-2xl font-serif font-bold text-brand-dark tracking-tight">一人一方案</h3>
+                        <h3 class="text-2xl font-serif font-bold text-brand-dark tracking-tight">MDT专家会诊&一人一方案</h3>
                         <span class="text-xs font-bold tracking-[0.05em] uppercase mb-1.5 text-brand-main opacity-80">Tailored Plan</span>
                     </div>
                     <p class="text-[#6B7C75] leading-relaxed mb-6 text-sm md:text-[15px] font-light tracking-wide">
@@ -376,9 +402,10 @@
             </div>
         </div>
 
-        <!-- 决策时刻 Divider -->
+        <!-- 决策时刻 Divider + Arrow -->
         <div class="h-24 flex flex-col items-center justify-center relative w-full my-6">
              <div class="h-full w-px bg-gradient-to-b from-[#D1D5DB] via-[#BCCCDC] to-transparent border-l border-dashed border-[#BCCCDC]"></div>
+             <i data-lucide="chevron-down" class="w-5 h-5 absolute bottom-0 bg-[#FAF9F6] text-[#9CA3AF]"></i>
              <div class="absolute bg-white px-6 py-2 rounded-full border border-[#E8E6E1] shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex items-center gap-2 z-10">
                 <i data-lucide="git-fork" class="w-4 h-4 text-brand-sage"></i>
                 <span class="text-xs font-bold text-brand-sage tracking-widest uppercase">Decision Point</span>
@@ -386,7 +413,7 @@
         </div>
 
         <!-- 决策卡片组 Container -->
-        <div class="w-full max-w-5xl relative mb-20">
+        <div class="w-full max-w-5xl relative mb-12">
             <!-- Decorative Back Glow -->
             <div class="absolute inset-0 bg-gradient-to-b from-white/40 to-white/0 blur-3xl -z-10"></div>
             
@@ -469,12 +496,19 @@
 
             </div>
         </div>
-
-        <!-- 连接器 -->
-        <div class="connector-line"></div>
+        
+        <!-- 箭头连接器 -->
+        <div class="flex flex-col items-center justify-center h-16 text-[#BCCCDC]">
+            <div class="w-px h-full bg-[#BCCCDC] border-l border-dashed border-[#BCCCDC]"></div>
+            <i data-lucide="chevron-down" class="w-5 h-5 -mt-2 bg-[#FAF9F6] text-[#9CA3AF]"></i>
+        </div>
 
         <!-- 【新增】结案与成效评估 -->
         <div class="relative w-full max-w-3xl bg-white p-8 md:p-10 rounded-[2.5rem] border border-[#E8E6E1] shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 group">
+            
+            <!-- 序号 05 -->
+            <div class="absolute -top-4 -left-4 w-10 h-10 bg-[#2F3E35] text-[#FAF9F6] rounded-full flex items-center justify-center font-serif font-bold text-lg shadow-lg border-4 border-[#FAF9F6] z-20">05</div>
+
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="shrink-0 w-16 h-16 rounded-2xl bg-brand-gold flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform ring-4 ring-white text-white">
                     <i data-lucide="activity" class="w-6 h-6"></i>
