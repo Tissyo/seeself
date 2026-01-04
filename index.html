@@ -141,12 +141,82 @@
                 <i data-lucide="flower-2" class="w-3.5 h-3.5"></i>
                 <span>Professional Social Work</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-serif font-bold text-brand-dark mb-6 tracking-tight leading-tight">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-brand-dark mb-10 tracking-tight leading-tight">
                 见己 <span class="text-brand-sage font-light italic text-3xl md:text-5xl ml-2 font-serif">Seeing Self</span>
             </h1>
-            <p class="text-[#6B7C75] text-lg max-w-2xl mx-auto font-light leading-relaxed">
-                以心理健康为基底，以关系为场域 丨 一人一方案 丨 跨学科 MDT 全程守护
-            </p>
+
+            <!-- 新增：艺术化 Slogan 设计 (带背景) -->
+            <div class="relative w-full max-w-3xl mx-auto mb-12 group cursor-default">
+                
+                <!-- 背景层：磨砂玻璃卡片 -->
+                <div class="absolute inset-0 bg-white/50 backdrop-blur-sm border border-white/60 rounded-[2rem] shadow-[0_8px_32px_rgba(47,62,53,0.03)] -z-10 transition-all duration-700 group-hover:shadow-[0_15px_40px_rgba(47,62,53,0.06)] group-hover:bg-white/70 group-hover:scale-[1.01]"></div>
+                
+                <!-- 装饰角标 (左上) -->
+                <div class="absolute top-5 left-5 w-3 h-3 border-t border-l border-brand-sage/30 opacity-50"></div>
+                <!-- 装饰角标 (右下) -->
+                <div class="absolute bottom-5 right-5 w-3 h-3 border-b border-r border-brand-sage/30 opacity-50"></div>
+
+                <div class="flex flex-col items-center py-10 px-6 md:px-12 relative z-10">
+                    <!-- 顶部装饰线与图标 -->
+                    <div class="flex items-center gap-4 mb-5 opacity-60">
+                        <div class="w-8 md:w-16 h-px bg-gradient-to-r from-transparent to-brand-gold"></div>
+                        <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold animate-pulse"></i>
+                        <div class="w-8 md:w-16 h-px bg-gradient-to-l from-transparent to-brand-gold"></div>
+                    </div>
+
+                    <!-- 主标语文本 -->
+                    <h2 class="text-xl md:text-3xl font-serif text-[#4A5553] tracking-widest leading-relaxed relative text-center">
+                        <span class="italic text-brand-sage/30 font-light mr-3 font-serif text-5xl absolute -top-4 -left-4 md:-left-8">“</span>
+                          您与家庭
+                        <span class="relative inline-block mx-2">
+                            <span class="relative z-10 font-bold text-brand-dark">深度成长</span>
+                            <!-- 荧光笔高亮效果 -->
+                            <span class="absolute bottom-2 left-0 w-full h-3 bg-brand-gold/20 -z-0 rounded-sm skew-x-[-10deg] group-hover:bg-brand-gold/30 transition-colors duration-500"></span>
+                        </span>
+                        的
+                        <span class="text-brand-main font-semibold border-b border-dashed border-brand-main/40 pb-0.5 group-hover:border-solid transition-all cursor-text ml-1">首选伙伴  </span>
+                        <span class="italic text-brand-sage/30 font-light ml-3 font-serif text-5xl absolute -bottom-8 -right-2 md:-right-6 leading-none">”</span>
+                    </h2>
+                    
+                    <!-- 英文副标题 -->
+                    <p class="mt-6 text-[10px] md:text-xs text-brand-sage uppercase tracking-[0.3em] font-light opacity-80 border-t border-brand-sage/10 pt-4 w-3/4 md:w-1/2 text-center">
+                        Your Trusted Partner for Family Growth
+                    </p>
+                </div>
+            </div>
+
+            <!-- 底部核心理念：艺术发光效果 -->
+            <div class="mt-8 relative inline-flex items-center justify-center py-6 px-10 overflow-hidden">
+                <!-- 氛围光效：淡金色柔光 -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-brand-gold/5 to-transparent blur-2xl rounded-full opacity-60 pointer-events-none"></div>
+
+                <div class="relative z-10 flex items-center gap-6 md:gap-8">
+                    <!-- 词条1 -->
+                    <span class="text-lg md:text-xl font-serif text-[#6B7C75] tracking-[0.2em] transition-all duration-500 hover:text-brand-gold hover:drop-shadow-[0_0_15px_rgba(212,184,106,0.6)] cursor-default">
+                        见自己
+                    </span>
+                    
+                    <!-- 艺术分隔符 -->
+                    <span class="text-brand-sage/30 font-light text-xs animate-spin-slow">
+                         <i data-lucide="star" class="w-3 h-3 inline-block"></i>
+                    </span>
+                    
+                    <!-- 词条2 -->
+                    <span class="text-lg md:text-xl font-serif text-[#6B7C75] tracking-[0.2em] transition-all duration-500 hover:text-brand-gold hover:drop-shadow-[0_0_15px_rgba(212,184,106,0.6)] cursor-default">
+                        见关系
+                    </span>
+                    
+                    <!-- 艺术分隔符 -->
+                    <span class="text-brand-sage/30 font-light text-xs animate-spin-slow">
+                        <i data-lucide="star" class="w-3 h-3 inline-block"></i>
+                    </span>
+                    
+                    <!-- 词条3 -->
+                    <span class="text-lg md:text-xl font-serif text-[#6B7C75] tracking-[0.2em] transition-all duration-500 hover:text-brand-gold hover:drop-shadow-[0_0_15px_rgba(212,184,106,0.6)] cursor-default">
+                        见未来
+                    </span>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -164,8 +234,14 @@
                     </div>
                 </div>
                 <div class="flex gap-2">
-                    <span class="text-[10px] px-3 py-1 bg-[#F3F6F4] text-[#6B7C75] rounded-full border border-[#E8E6E1]">安全私密</span>
-                    <span class="text-[10px] px-3 py-1 bg-[#F3F6F4] text-[#6B7C75] rounded-full border border-[#E8E6E1]">功能分区</span>
+                    <span class="text-[10px] px-3 py-1 bg-[#F3F6F4] text-[#6B7C75] rounded-full border border-[#E8E6E1] flex items-center gap-1.5">
+                        <i data-lucide="lock" class="w-3 h-3"></i>
+                        安全私密
+                    </span>
+                    <span class="text-[10px] px-3 py-1 bg-[#F3F6F4] text-[#6B7C75] rounded-full border border-[#E8E6E1] flex items-center gap-1.5">
+                        <i data-lucide="layout-grid" class="w-3 h-3"></i>
+                        功能分区
+                    </span>
                 </div>
             </div>
             
@@ -287,9 +363,18 @@
                         温暖的第一次接触。我们通过专业问卷了解您的基本状态与需求，确保服务的适切性与安全性。
                     </p>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main">非病理取向筛查</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main">服务匹配度确认</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main">基本资料建档</span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main flex items-center gap-1.5">
+                            <i data-lucide="shield-check" class="w-3 h-3"></i>
+                            非病理取向筛查
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-3 h-3"></i>
+                            服务匹配度确认
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main flex items-center gap-1.5">
+                            <i data-lucide="file-edit" class="w-3 h-3"></i>
+                            基本资料建档
+                        </span>
                     </div>
                     <div class="mt-6 p-4 bg-[#FEF2F2] border border-[#FECACA] rounded-xl flex items-start gap-3">
                         <i data-lucide="alert-circle" class="w-4 h-4 text-[#EF4444] shrink-0 mt-0.5"></i>
@@ -326,9 +411,18 @@
                         引入前沿科技，构建全息视角。融合脑科学数据、心理测量学指标及社会互动模式，生成智能化AI辅助评估报告。
                     </p>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#E3EFFB] text-[#5486B0]">脑科学数据</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#E3EFFB] text-[#5486B0]">互动模式分析</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#E3EFFB] text-[#5486B0]">AI智能报告</span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#E3EFFB] text-[#5486B0] flex items-center gap-1.5">
+                            <i data-lucide="activity" class="w-3 h-3"></i>
+                            脑科学数据
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#E3EFFB] text-[#5486B0] flex items-center gap-1.5">
+                            <i data-lucide="network" class="w-3 h-3"></i>
+                            互动模式分析
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#E3EFFB] text-[#5486B0] flex items-center gap-1.5">
+                            <i data-lucide="bot" class="w-3 h-3"></i>
+                            AI智能报告
+                        </span>
                     </div>
                 </div>
             </div>
@@ -359,9 +453,18 @@
                         在私密、安全、温馨的物理场域中，由资深社工师与您进行60分钟的深度对话。基于数据报告，进一步专业评估。
                     </p>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844]">关系建立</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844]">叙事倾听</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844]">需求澄清</span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844] flex items-center gap-1.5">
+                            <i data-lucide="heart-handshake" class="w-3 h-3"></i>
+                            关系建立
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844] flex items-center gap-1.5">
+                            <i data-lucide="ear" class="w-3 h-3"></i>
+                            叙事倾听
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844] flex items-center gap-1.5">
+                            <i data-lucide="target" class="w-3 h-3"></i>
+                            需求澄清
+                        </span>
                     </div>
                 </div>
             </div>
@@ -393,9 +496,18 @@
                         开启专业的定制化服务，我们为您专属生成个性化报告与干预策略，包含个性化服务路径、推荐的专家匹配以及预期的成长目标。
                     </p>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main">个性化报告</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main">定制化策略</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main">社会资源链接</span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main flex items-center gap-1.5">
+                            <i data-lucide="file-output" class="w-3 h-3"></i>
+                            个性化报告
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main flex items-center gap-1.5">
+                            <i data-lucide="compass" class="w-3 h-3"></i>
+                            定制化策略
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#EBF2EE] text-brand-main flex items-center gap-1.5">
+                            <i data-lucide="link" class="w-3 h-3"></i>
+                            社会资源链接
+                        </span>
 
                     </div>
                 </div>
@@ -522,9 +634,18 @@
                         服务周期的圆满句点。我们将进行全方位的成效评估与满意度反馈，并协助您制定后续的自我成长维护计划，确保改变的可持续性。
                     </p>
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844]">目标达成度检视</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844]">满意度反馈</span>
-                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844]">自我成长计划</span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844] flex items-center gap-1.5">
+                            <i data-lucide="flag" class="w-3 h-3"></i>
+                            目标达成度检视
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844] flex items-center gap-1.5">
+                            <i data-lucide="smile" class="w-3 h-3"></i>
+                            满意度反馈
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-[#FFF9E0] text-[#9B8844] flex items-center gap-1.5">
+                            <i data-lucide="sprout" class="w-3 h-3"></i>
+                            自我成长计划
+                        </span>
                     </div>
                 </div>
             </div>
