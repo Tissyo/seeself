@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>见己 · Seeing Self | 专业社工服务流程</title>
+    <title>见己家庭教育研究院 | Seeing Self Institute</title>
     
     <!-- 1. 引入 Tailwind CSS (样式框架) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,7 +14,7 @@
     <!-- 3. 引入 字体 (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <!-- 4. 配置自定义颜色和字体 -->
     <script>
@@ -24,23 +24,31 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['"Noto Serif SC"', 'serif'],
+                        display: ['"Playfair Display"', 'serif'],
                     },
                     colors: {
                         brand: {
-                            dark: '#2F3E35',   // 深墨绿
-                            main: '#5A7D71',   // 主色
-                            sage: '#7C9082',   // 鼠尾草绿
-                            gold: '#D4B86A',   // 哑光金
+                            dark: '#2F3E35',   // 深墨绿 (背景/深色文字)
+                            main: '#5A7D71',   // 主色 (中性绿)
+                            sage: '#7C9082',   // 鼠尾草绿 (辅助色)
+                            gold: '#D4B86A',   // 哑光金 (点缀)
+                            // 【调整】forest: 森林绿，用于强调“见己”品牌，富有生命力
+                            forest: '#2C5F2D', 
                             bg: '#FAF9F6',     // 米白背景
                         }
                     },
                     animation: {
                         'fade-up': 'fadeUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1.2s ease-out forwards',
                     },
                     keyframes: {
                         fadeUp: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
                         }
                     }
                 }
@@ -53,7 +61,7 @@
         .bg-noise {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 0; opacity: 0.4;
+            pointer-events: none; z-index: 0; opacity: 0.35;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
             mix-blend-mode: overlay;
         }
@@ -67,9 +75,14 @@
             scrollbar-width: none;
         }
 
-        /* 序号徽章样式 */
-        .step-badge {
-            @apply absolute -top-4 -left-4 w-10 h-10 bg-[#2F3E35] text-[#FAF9F6] rounded-full flex items-center justify-center font-serif font-bold text-lg shadow-lg border-4 border-[#FAF9F6] z-20;
+        /* 简单的连接线样式 */
+        .connector-line {
+            height: 64px;
+            width: 1px;
+            background: linear-gradient(to bottom, #D1D5DB, #BCCCDC);
+            border-left: 1px dashed #BCCCDC;
+            margin: 4px auto;
+            position: relative;
         }
     </style>
 </head>
@@ -91,18 +104,18 @@
                 </span>
                 <span class="hidden md:flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
                     <i data-lucide="mail" class="w-3 h-3 text-brand-sage"></i>
-                    <span>service@jianji.com</span>
+                    <span>contact@seeing-self.com</span>
                 </span>
             </div>
             <div class="flex items-center gap-5">
                 <a href="#" class="flex items-center gap-1.5 hover:text-white transition-colors opacity-90 hover:opacity-100 group">
                     <i data-lucide="user-circle" class="w-3.5 h-3.5"></i>
-                    <span class="tracking-wide">客户登录</span>
+                    <span class="tracking-wide">来访者登录</span>
                 </a>
                 <div class="w-px h-3 bg-brand-sage opacity-50"></div>
                 <a href="#" class="flex items-center gap-1.5 hover:text-white transition-colors opacity-90 hover:opacity-100">
                     <i data-lucide="globe" class="w-3 h-3 text-brand-sage"></i>
-                    <span class="font-serif italic tracking-wider">CH</span>
+                    <span class="font-display italic tracking-wider">EN</span>
                 </a>
             </div>
         </div>
@@ -111,18 +124,24 @@
     <!-- 主导航栏 -->
     <nav id="navbar" class="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-xl border-b border-[#E8E6E1] px-6 h-20 flex items-center justify-center transition-all shadow-sm">
         <div class="max-w-6xl w-full flex items-center justify-between">
-            <div class="flex items-center gap-2 text-brand-sage group cursor-pointer">
-                <div class="p-1.5 bg-[#F3F6F4] rounded-full group-hover:bg-[#EBF2EE] transition-colors">
-                    <i data-lucide="flower-2" class="w-5 h-5 text-brand-sage"></i>
+            <!-- Logo 区域 -->
+            <div class="flex items-center gap-3 text-brand-sage group cursor-pointer">
+                <div class="p-1.5 bg-[#F3F6F4] rounded-full group-hover:bg-[#EBF2EE] transition-colors border border-[#E8E6E1]">
+                    <!-- 配合森林绿 -->
+                    <i data-lucide="flower-2" class="w-5 h-5 text-brand-forest"></i>
                 </div>
-                <span class="font-serif font-bold text-xl text-brand-dark tracking-tight">见己 · Seeing Self</span>
+                <div class="flex flex-col md:flex-row md:items-baseline md:gap-2">
+                    <!-- “见己”使用森林绿 -->
+                    <span class="font-serif font-bold text-lg md:text-xl text-brand-forest tracking-tight leading-none">见己</span>
+                    <span class="font-serif text-xs md:text-sm text-brand-main tracking-wide leading-none">家庭教育研究院</span>
+                </div>
             </div>
             
             <div class="hidden md:flex items-center gap-10 text-sm font-medium text-[#6B7C75]">
                 <a href="#" class="hover:text-brand-main transition-colors py-2">首页</a>
                 <a href="#" class="text-brand-main font-bold py-2 border-b-2 border-brand-main">专业流程</a>
                 <a href="#" class="hover:text-brand-main transition-colors py-2">专家团队</a>
-                <a href="#" class="hover:text-brand-main transition-colors py-2">关于我们</a>
+                <a href="#" class="hover:text-brand-main transition-colors py-2">关于研究院</a>
             </div>
 
             <div class="flex items-center gap-4">
@@ -134,18 +153,32 @@
         </div>
     </nav>
 
-    <!-- 头部区域 (Hero) -->
-    <header class="relative w-full pt-16 pb-12 px-6 text-center overflow-hidden z-10">
-        <div class="relative z-10 max-w-4xl mx-auto opacity-0 animate-fade-up" style="animation-delay: 0.1s;">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 border border-[#E8E6E1] text-brand-main text-xs font-bold tracking-[0.2em] uppercase mb-8 shadow-sm backdrop-blur-sm">
-                <i data-lucide="flower-2" class="w-3.5 h-3.5"></i>
-                <span>Professional Social Work</span>
+    <!-- 头部区域 (Hero) - 视觉升级 -->
+    <header class="relative w-full pt-20 pb-16 px-6 text-center overflow-hidden z-10">
+        <div class="relative z-10 max-w-5xl mx-auto opacity-0 animate-fade-up" style="animation-delay: 0.1s;">
+            <!-- 标签 -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 border border-[#E8E6E1] text-brand-main text-xs font-bold tracking-[0.2em] uppercase mb-10 shadow-sm backdrop-blur-sm hover:bg-white/80 transition-colors cursor-default">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-brand-forest"></i>
+                <span>Professional Family Education</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-serif font-bold text-brand-dark mb-10 tracking-tight leading-tight cursor-default">
-                <span class="transition-all duration-500 hover:text-brand-gold hover:drop-shadow-[0_0_15px_rgba(212,184,106,0.6)]">见己</span> <span class="text-brand-sage font-light italic text-3xl md:text-5xl ml-2 font-serif transition-all duration-500 hover:text-brand-gold hover:drop-shadow-[0_0_15px_rgba(212,184,106,0.6)]">Seeing Self</span>
+            
+            <!-- 主标题：冷暖分层设计 -->
+            <h1 class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-5 font-serif mb-6 leading-tight">
+                <!-- 见己：使用森林绿 -->
+                <span class="text-5xl md:text-7xl font-bold tracking-tight text-brand-forest">见己</span>
+                <!-- 分隔符：淡淡的森林绿 -->
+                <span class="hidden md:block w-px h-10 bg-brand-forest/30 rotate-12"></span>
+                <!-- 研究院：深色系 -->
+                <span class="text-3xl md:text-5xl font-normal tracking-wide text-brand-dark opacity-90">家庭教育研究院</span>
             </h1>
+            
+            <!-- 英文副标题 -->
+            <div class="font-display text-2xl md:text-3xl text-brand-sage italic font-normal tracking-wide mb-10 opacity-80">
+                Seeing Self
+            </div>
 
-            <!-- 新增：艺术化 Slogan 设计 (带背景) -->
+        </div>
+             <!-- 新增：艺术化 Slogan 设计 (带背景) -->
             <div class="relative w-full max-w-3xl mx-auto mb-12 group cursor-default">
                 
                 <!-- 背景层：磨砂玻璃卡片 -->
@@ -183,6 +216,14 @@
                 </div>
             </div>
 
+            <!-- 描述文案 -->
+            <div class="flex items-center justify-center gap-3 text-[#6B7C75] text-sm md:text-base font-light tracking-widest uppercase opacity-80">
+                <span>心理健康基底</span>
+                <span class="w-1 h-1 rounded-full bg-brand-forest"></span> <!-- 装饰点呼应森林绿 -->
+                <span>家庭关系场域</span>
+                <span class="w-1 h-1 rounded-full bg-brand-forest"></span>
+                <span>专业MDT守护</span>
+            </div>
             <!-- 底部核心理念：艺术发光效果 -->
             <div class="mt-8 relative inline-flex items-center justify-center py-6 px-10 overflow-hidden">
                 <!-- 氛围光效：淡金色柔光 -->
